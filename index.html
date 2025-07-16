@@ -25,6 +25,7 @@
             line-height: 1.6;
             color: var(--dark);
             overflow-x: hidden;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
         
         /* Header */
@@ -74,6 +75,9 @@
         .logo h1 {
             font-size: 1.5rem;
             transition: all 0.3s ease;
+            background: linear-gradient(to right, #ffffff, #e6f7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .header-scrolled .logo h1 {
@@ -229,13 +233,16 @@
         }
         
         .video-content h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #ffffff, #ffd8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .video-content p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
@@ -244,17 +251,20 @@
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid #d35400;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         
         .btn:hover {
             background: #d35400;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         
         /* Slider */
@@ -264,6 +274,7 @@
             position: relative;
             overflow: hidden;
             margin-top: 0;
+            border-bottom: 5px solid var(--accent);
         }
         
         .slide {
@@ -294,7 +305,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(230, 126, 34, 0.5));
         }
         
         .slide-content {
@@ -302,41 +313,51 @@
             z-index: 1;
             max-width: 800px;
             padding: 0 20px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .slide-content h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease;
         }
         
         .slide-content p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1.2s ease;
         }
         
         .slider-btn {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background 0.3s;
-            animation: fadeInUp 1.4s ease;
+            font-size: 1.1rem;
+            border: 2px solid #d35400;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         
         .slider-btn:hover {
             background: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             opacity: 0;
             transform: translateY(100px);
             transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -353,11 +374,14 @@
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--secondary);
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .section-title h2::after {
@@ -366,9 +390,10 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 4px;
             background: var(--accent);
+            border-radius: 2px;
         }
         
         /* Services */
@@ -379,18 +404,19 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
         
         .service-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s;
             opacity: 0;
             transform: scale(0.9);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 4px solid var(--accent);
         }
         
         .service-card.show {
@@ -399,12 +425,12 @@
         }
         
         .service-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
         }
         
         .service-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
         }
         
@@ -412,21 +438,26 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.7s;
         }
         
         .service-card:hover .service-img img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
         
         .service-content {
-            padding: 20px;
+            padding: 25px;
         }
         
         .service-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             color: var(--primary);
+        }
+        
+        .service-content p {
+            color: #555;
+            line-height: 1.7;
         }
         
         /* Gallery */
@@ -436,19 +467,19 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
         
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: 250px;
-            transition: all 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            height: 280px;
+            transition: all 0.4s;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
@@ -458,19 +489,19 @@
         }
         
         .gallery-item:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.22);
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.7s;
         }
         
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .gallery-item-caption {
@@ -478,31 +509,48 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
             color: white;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .gallery-item-caption h3 {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+        
+        .gallery-item-caption p {
+            font-size: 1rem;
+            opacity: 0.9;
         }
         
         /* About */
         .about {
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
         
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
         .about-img {
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(-80px);
             transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .about-img.show {
@@ -512,18 +560,17 @@
         
         .about-img img {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s;
+            display: block;
+            transition: transform 0.7s;
         }
         
         .about-img:hover img {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
         
         .about-text {
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(80px);
             transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
@@ -533,30 +580,67 @@
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 25px;
             color: var(--secondary);
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-box .label {
+            color: #666;
+            font-size: 1.1rem;
         }
         
         /* Contact */
         .contact {
-            background: var(--light);
+            background: white;
         }
         
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
         
         .contact-info {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: var(--light);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(60px);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 4px solid var(--accent);
         }
         
         .contact-info.show {
@@ -565,22 +649,27 @@
         }
         
         .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.7rem;
+            margin-bottom: 25px;
             color: var(--primary);
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
         }
         
         .contact-info p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            color: #444;
+            font-size: 1.1rem;
         }
         
         .contact-info i {
             color: var(--accent);
-            margin-right: 10px;
-            width: 20px;
+            margin-right: 15px;
+            width: 25px;
             text-align: center;
+            font-size: 1.3rem;
         }
         
         .whatsapp-btn {
@@ -588,32 +677,35 @@
             align-items: center;
             background: #25D366;
             color: white;
-            padding: 12px 20px;
+            padding: 14px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             margin-top: 20px;
             transition: all 0.3s;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         
         .whatsapp-btn:hover {
             background: #128C7E;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .whatsapp-btn i {
             margin-right: 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         .social-media {
-            margin-top: 30px;
+            margin-top: 35px;
         }
         
         .social-media h4 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: var(--primary);
+            font-size: 1.4rem;
         }
         
         .social-links {
@@ -624,18 +716,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 15px;
             transition: all 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .social-links a:hover {
             background: var(--accent);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
         
         /* Footer */
@@ -643,7 +738,19 @@
             background: var(--secondary);
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 50px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
         }
         
         .footer-logo {
@@ -654,25 +761,40 @@
         }
         
         .footer-logo img {
-            height: 40px;
+            height: 50px;
             margin-right: 15px;
         }
         
+        .footer-logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #ffffff, #ffd8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
         .footer-social-links {
-            margin: 20px 0;
+            margin: 25px 0;
             display: flex;
             justify-content: center;
         }
         
         .footer-social-links a {
             color: white;
-            margin: 0 10px;
-            font-size: 1.5rem;
+            margin: 0 15px;
+            font-size: 1.6rem;
             transition: color 0.3s;
         }
         
         .footer-social-links a:hover {
             color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         /* Animations */
@@ -684,7 +806,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -695,7 +817,7 @@
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-80px);
+                transform: translateX(-100px);
             }
             to {
                 opacity: 1;
@@ -706,7 +828,7 @@
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(80px);
+                transform: translateX(100px);
             }
             to {
                 opacity: 1;
@@ -725,10 +847,20 @@
             }
         }
         
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .video-content h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .about-content {
@@ -737,6 +869,17 @@
             
             .about-img {
                 order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .about-text {
+                text-align: center;
+            }
+            
+            .stats {
+                max-width: 500px;
+                margin: 30px auto 0;
             }
         }
         
@@ -750,15 +893,19 @@
             }
             
             .video-content h2 {
-                font-size: 2rem;
+                font-size: 2.3rem;
+            }
+            
+            .video-content p {
+                font-size: 1.2rem;
             }
             
             .slide-content h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
             
             .hero-video {
@@ -768,27 +915,44 @@
         
         @media (max-width: 576px) {
             .video-content h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .video-content p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .btn, .slider-btn {
-                padding: 10px 20px;
-            }
-            
-            .slide-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .slide-content p {
+                padding: 12px 25px;
                 font-size: 1rem;
             }
             
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
             .hero-video {
-                height: 60vh;
+                height: 65vh;
+            }
+            
+            .about-img {
+                transform: translateX(-50px);
+            }
+            
+            .about-text {
+                transform: translateX(50px);
+            }
+            
+            .contact-info {
+                padding: 25px;
             }
         }
     </style>
@@ -826,14 +990,14 @@
             <div class="video-content">
                 <h2>Experts en Solutions de Froid et Climatisation</h2>
                 <p>Des solutions sur mesure pour votre confort thermique et la conservation de vos produits</p>
-                <a href="#contact" class="btn">Contactez-nous</a>
+                <a href="#contact" class="btn floating">Contactez-nous</a>
             </div>
         </div>
     </section>
 
     <!-- Slider -->
     <div class="slider">
-        <div class="slide active" style="background-image: url('Ettf_diapo1.jpg')">
+        <div class="slide active" style="background-image: url('diap1ttf.jpg')">
             <div class="slide-content">
                 <h2>Besoin d'un dépannage rapide ?</h2>
                 <p>Notre équipe est disponible 24/7 pour répondre à vos urgences en matière de froid et climatisation</p>
@@ -842,11 +1006,10 @@
                 </a>
             </div>
         </div>
-        <div class="slide" style="background-image: url('Ettf_diapo1.jpg')">
-            <div class')">
+        <div class="slide" style="background-image: url('diap2ttf.jpg')">
             <div class="slide-content">
                 <h2>ETTF INTERNATIONAL</h2>
-                <p>Une référence pour votre satisfaction </p>
+                <p>Une référence pour votre satisfaction depuis plus de 10 ans</p>
                 <a href="#services" class="slider-btn">Découvrez nos services</a>
             </div>
         </div>
@@ -884,7 +1047,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="Servettf1.jpg" alt="Installation de climatiseurs">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Installation de climatiseurs">
                     </div>
                     <div class="service-content">
                         <h3>Installation et Entretien de Climatiseurs</h3>
@@ -928,29 +1091,29 @@
     <section class="gallery" id="galerie">
         <div class="container">
             <div class="section-title">
-                <h2>Nos Produits</h2>
+                <h2>Nos Réalisations</h2>
                 <p>Découvrez quelques-unes de nos chambres froides conçues sur mesure</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chambre froide modèle 1">
                     <div class="gallery-item-caption">
-                        <h3>Modèle Basic</h3>
+                        <h3>Modèle Professionnel Standard</h3>
                         <p>Idéal pour les restaurants et petites surfaces</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chambre froide modèle 2">
                     <div class="gallery-item-caption">
-                        <h3>Modèle Professionnel</h3>
-                        <p>Pour les besoins de  productions moyennes</p>
+                        <h3>Modèle Industriel</h3>
+                        <p>Pour les besoins de grande capacité</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chambre froide modèle 3">
                     <div class="gallery-item-caption">
-                        <h3>Modèle Industriel</h3>
-                        <p>Solution spéciale pour la grande distribution</p>
+                        <h3>Modèle Pharmacie</h3>
+                        <p>Solution spéciale pour produits pharmaceutiques</p>
                     </div>
                 </div>
             </div>
@@ -971,6 +1134,25 @@
                     <p>Fondée en 2010, ETTF INTERNATIONAL s'est imposée comme un leader dans le domaine du froid et de la climatisation en Afrique. Notre équipe d'experts certifiés met à votre disposition son savoir-faire pour des solutions adaptées à vos besoins.</p>
                     <p>Nous nous engageons à fournir des services de qualité, avec des équipements de dernière génération et une approche centrée sur la satisfaction client. Notre philosophie : une intervention rapide, des solutions durables et un accompagnement personnalisé.</p>
                     <p>Avec des centaines de projets réalisés et des clients satisfaits, nous continuons à innover pour répondre aux défis climatiques et énergétiques de notre temps.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-box">
+                            <div class="number">10+</div>
+                            <div class="label">Années d'expérience</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">500+</div>
+                            <div class="label">Projets réalisés</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">98%</div>
+                            <div class="label">Clients satisfaits</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">24/7</div>
+                            <div class="label">Service d'urgence</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -985,11 +1167,11 @@
                 <div class="contact-info">
                     <h3>Nos Coordonnées</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Avenue des Experts, Abidjan, Côte d'Ivoire</p>
-                    <p><i class="fas fa-phone"></i> +226 76 63 61 77</p>
+                    <p><i class="fas fa-phone"></i> +225 XX XX XX XX</p>
                     <p><i class="fas fa-envelope"></i> contact@ettf-international.com</p>
                     <p><i class="fas fa-clock"></i> Lundi - Vendredi: 8h - 18h<br>Samedi: 9h - 13h</p>
                     
-                    <a href="https://wa.me/22668478688" class="whatsapp-btn">
+                    <a href="https://wa.me/225XXXXXXXXX" class="whatsapp-btn">
                         <i class="fab fa-whatsapp"></i> Envoyer un message WhatsApp
                     </a>
                     
@@ -1005,13 +1187,19 @@
                 </div>
                 <div class="contact-info">
                     <h3>Zone d'intervention</h3>
-                    <p><i class="fas fa-check"></i> Ouagadougou et ses environs</p>
-                    <p><i class="fas fa-check"></i> Burkina Faso</p>
+                    <p><i class="fas fa-check"></i> Abidjan et ses environs</p>
+                    <p><i class="fas fa-check"></i> Grands projets dans toute la Côte d'Ivoire</p>
                     <p><i class="fas fa-check"></i> Interventions en Afrique de l'Ouest</p>
                     
                     <h3 style="margin-top: 30px;">Heures d'urgence</h3>
                     <p><i class="fas fa-ambulance"></i> Service de dépannage disponible 24h/24</p>
-                    <p><i class="fas fa-phone"></i> Urgences: +226 76 63 61 77</p>
+                    <p><i class="fas fa-phone"></i> Urgences: +225 XX XX XX XX</p>
+                    
+                    <div style="margin-top: 30px; background: rgba(230, 126, 34, 0.1); padding: 20px; border-radius: 10px;">
+                        <h3><i class="fas fa-certificate"></i> Garantie</h3>
+                        <p><i class="fas fa-shield-alt"></i> Tous nos services sont garantis 12 mois</p>
+                        <p><i class="fas fa-tools"></i> Pièces d'origine fournies</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1023,14 +1211,14 @@
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiMwMDU2YjMiIHJ4PSIxMCIvPjxwYXRoIGQ9Ik0zMCAzMEg3MFY3MEgzMFYzMHpNNDAgNDBINjBWNTBINDBWNDB6TTQwIDUwSDYwVjYwSDQwVjUwek00MCA2MEg2MFY3MEg0MFY2MHoiIGZpbGw9IndoaXRlIi8+PC9zdmc+" alt="ETTF INTERNATIONAL Logo">
                 <h1>ETTF INTERNATIONAL</h1>
             </div>
-            <p>Votre partenaire en solutions de froid et climatisation </p>
+            <p>Votre partenaire en solutions de froid et climatisation depuis 2010</p>
             <div class="footer-social-links">
                 <a href="https://www.facebook.com/votrepage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://wa.me/22668478688" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/225XXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2023 ETTF INTERNATIONAL. Tous droits réservés.</p>
+            <p class="copyright">&copy; 2023 ETTF INTERNATIONAL. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1059,10 +1247,12 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
         
         mobileMenuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
         
         // Close mobile menu when clicking on a link
@@ -1070,6 +1260,7 @@
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
         });
         
@@ -1121,6 +1312,10 @@
         // Animate contact info
         const contactInfo = document.querySelectorAll('.contact-info');
         animateOnScroll(contactInfo, 'show');
+        
+        // Animate slide content
+        const slideContent = document.querySelectorAll('.slide-content');
+        animateOnScroll(slideContent, 'show');
     </script>
 </body>
 </html>
